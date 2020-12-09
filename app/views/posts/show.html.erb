@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1>
+<div class="show-datetime">
+  更新時間：
+  <%= @post.updated_at %>
+</div>
+<hr>
+<div class="show-content">
+  <%= @post.content %>
+</div>
+
+<%= link_to "返回", posts_path %>
+<%= link_to "編輯", edit_post_path %>
+<%= link_to "刪除", @post, method: :delete, data: { confirm: "確認刪除文章？" } %>

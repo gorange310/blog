@@ -1,0 +1,10 @@
+<h1>Orange's Rails Blog</h1>
+<%= link_to "新增貼文", new_post_path %>
+<hr>
+<% @posts.each do |post| %>
+<strong><h2><%= link_to post.title, post %></h2></strong>
+<div class="content">
+  <%= post.updated_at %>
+  <p><%= post.content %></p>
+</div>
+<% end %>

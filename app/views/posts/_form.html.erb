@@ -1,0 +1,21 @@
+<% if post.errors.any? %>
+<ul>
+  <% post.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for(post) do |f| %>
+<div class="form-title">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<div class="form-content">
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+</div>
+<%= f.submit %><br>
+<%= link_to "返回", posts_path %>
+<% end %>
