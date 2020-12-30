@@ -10,9 +10,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = User.first
     if @post.save
       flash[:notice] = "Post was created successfully."
-      redirect_to "/"
+      redirect_to @post
     else
       render :new
     end
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :user_id)
   end
 
   def set_post
