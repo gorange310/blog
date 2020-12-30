@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:notice] = "Post was updated successfully."
-      redirect_to "/"
+      redirect_to posts_path
     else
       render :edit
     end
