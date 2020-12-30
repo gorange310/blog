@@ -1,2 +1,8 @@
 <h1 class="text-center mt-4">Listing All Posts</h1>
+<div class="digg_pagination">
+  <%= will_paginate @posts, :container => false %>
+</div>
 <%= render 'post' %> 
+<div class="digg_pagination">
+  <%= will_paginate @posts, :container => false %>
+</div>
