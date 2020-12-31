@@ -14,7 +14,9 @@
           Posts
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Create New Post", new_post_path, class:"dropdown-item" %>
+          <% if logged_in? %>
+            <%= link_to "Create New Post", new_post_path, class:"dropdown-item" %>
+          <% end %>    
           <%= link_to "View Posts", posts_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
