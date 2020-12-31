@@ -2,7 +2,7 @@
 <div class="digg_pagination">
   <%= will_paginate @posts, :container => false %>
 </div>
-<%= render 'post' %> 
+<%= render 'post', posts: @posts %> 
 <div class="digg_pagination">
   <%= will_paginate @posts, :container => false %>
 </div>
