@@ -13,6 +13,8 @@
             <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-info" %>
             <%= link_to "Delete", @post, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
           <% end %>
+          <%= render "comments/comment" %>
+          <%= render "comments/comments" %>
         </div>
         <div class="card-footer text-muted">
           <small>
