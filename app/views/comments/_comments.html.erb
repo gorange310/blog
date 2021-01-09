@@ -1,13 +1,18 @@
 <ul class="col-12">
   <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-center">
-    <%= form_with(model: @comment, local: true, url: post_comments_path(@post)) do |f| %>
-    <%= f.text_field :content, class: "rounded", placeholder: "Write a Comment..." %>
-    <%= f.submit "Post", class: "btn p-1 btn-secondary btn-sm" %>
+    <%= form_with(model: @comment,local: true, url: post_comments_path(@post)) do |f| %>
+      <div class="row">
+        <div class="col-10">
+          <%= f.text_field :content, class: "form-control rounded", placeholder: "Write a Comment..." %>
+        </div>
+        <div class="col-2">
+          <%= f.submit "Post", class: "btn p-1 btn-secondary" %>
+        </div>
+      </div>
     <% end %>
   </li>
   <% @comments.each do |comment| %>
     <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-      <%= comment.username %>
       <%= comment.content %>
       <% if logged_in? && @post.user == current_user || current_user.admin? %>
         <span class="badge badge-pill badge-warning">
