@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :require_user, only: [:create, :destroy]
+  before_action :require_same_user, only: [:destroy]
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
@@ -18,6 +21,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :commenter_id)
   end
 end
