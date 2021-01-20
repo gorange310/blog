@@ -5,7 +5,6 @@ class CategoryTest < ActiveSupport::TestCase
     @category = Category.new(name: "Sports")
   end
   
-
   test "category should be valid" do
     assert @category.valid?
   end
@@ -14,7 +13,6 @@ class CategoryTest < ActiveSupport::TestCase
     @category.name = " "
     assert_not @category.valid?
   end
-
 
   test "name should be uniqie" do
     @category.save
@@ -31,4 +29,5 @@ class CategoryTest < ActiveSupport::TestCase
     @category.name = "aa"
     assert_not @category.valid?
   end
+
 end
