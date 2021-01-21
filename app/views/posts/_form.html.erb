@@ -20,7 +20,7 @@
       <div class="form-group row">
         <%= f.label :category, class: "col-2 col-form-label text-light" %>
         <div class="col-10">
-          <%= f.collection_select(:category_id, Category.all, :id, :name,
+          <%= f.collection_select(:category_ids, Category.all.order(id: :desc), :id, :name,
           { prompt: "Select from the list below ( or can be empty )" }, { multiple: true, size: 3, class: "custom-select shadow rounded" })%>
         </div>
       </div>

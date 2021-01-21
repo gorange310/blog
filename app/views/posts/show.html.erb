@@ -6,12 +6,17 @@
         <div class="card-header font-italic">
           by <%= @post.user.username if @post.user %>
           <%= link_to gravatar_for(@post.user), user_path(@post.user) %>
+
+          <% if @post.categories.any? %>
+            <div class="mt-2"><%= render @post.categories %></div>
+          <% end %>
+
         </div>
         <div class="card-body">
           <div class="card-text text-left"><%= simple_format(@post.content) %></div>
           <% if logged_in? && @post.user == current_user || current_user.admin? %>
-            <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-info" %>
-            <%= link_to "Delete", @post, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
+          <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-info" %>
+          <%= link_to "Delete", @post, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
           <% end %>
         </div>
         <div class="card-footer text-muted">
