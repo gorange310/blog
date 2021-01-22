@@ -17,8 +17,11 @@
 
           <div class="bg-secondary rounded row justify-content-center">
             <div class="col-12 m-1 tab-content">
+            <div class= "text-warning">
+              Comments
+            </div>
               <% if @post.comments.any? %>
-                <div class="text-left text-warning"><%= render @post.comments %></div>
+                <div class="text-left text-light"><%= render @post.comments %></div>
               <% end %>
             </div>
             <div>
