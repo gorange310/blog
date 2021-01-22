@@ -7,7 +7,7 @@
   </div>
 <% end %>
 
-<div class="digg_pagination">
+<div class="digg_pagination row justify-content-center">
   <%= will_paginate @posts, :container => false %>
 </div>
 
@@ -15,6 +15,6 @@
 
 <%= render 'posts/post', posts: @posts %>
 
-<div class="digg_pagination">
+<div class="digg_pagination row justify-content-center">
   <%= will_paginate @posts, :container => false %>
 </div>

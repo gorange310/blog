@@ -5,10 +5,10 @@
     </span>
 </h1>
 
-<div class="digg_pagination">
+<div class="digg_pagination row justify-content-center">
   <%= will_paginate @posts, :container => false %>
 </div>
 <%= render 'post', posts: @posts %> 
-<div class="digg_pagination">
+<div class="digg_pagination row justify-content-center">
   <%= will_paginate @posts, :container => false %>
 </div>

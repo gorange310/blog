@@ -1,8 +1,8 @@
 <h1 class="text-center mt-4">Listing All Posts</h1>
-<div class="digg_pagination">
+<div class="digg_pagination row justify-content-center">
   <%= will_paginate @posts, :container => false %>
 </div>
 <%= render 'post', posts: @posts %> 
-<div class="digg_pagination">
+<div class="digg_pagination row justify-content-center">
   <%= will_paginate @posts, :container => false %>
 </div>
