@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
   helper_method :current_user, :logged_in?
   
   def current_user
@@ -14,6 +15,12 @@ class ApplicationController < ActionController::Base
       flash[:alert] = "You must be logged in to perform that action"
       redirect_to login_path
     end
+  end
+
+  
+  private
+  def not_found
+    render file: "public/404.html", layout: false, status: 404
   end
 
 end
