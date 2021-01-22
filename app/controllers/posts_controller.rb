@@ -44,6 +44,11 @@ class PostsController < ApplicationController
     redirect_to "/"
   end
 
+  def search
+    @keyword = params[:keyword]
+    @posts = Post.search(@keyword).paginate(page: params[:page], per_page: 5).order(id: :desc)
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :content, category_ids: [])

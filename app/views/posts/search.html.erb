@@ -1,0 +1,14 @@
+<h1 class="text-center mt-4">
+  Posts with: 
+    <span class="text-primary">
+      <%= @keyword %>
+    </span>
+</h1>
+
+<div class="digg_pagination">
+  <%= will_paginate @posts, :container => false %>
+</div>
+<%= render 'post', posts: @posts %> 
+<div class="digg_pagination">
+  <%= will_paginate @posts, :container => false %>
+</div>
