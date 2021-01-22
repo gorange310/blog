@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+  <div class="col-12 m-3">
+    <%= form_with(model: @comment, local: true, url: post_comments_path(@post)) do |f| %>
+      <div class="form-group row">
+        <div class="col-9">
+          <%= f.text_field :content, class: "form-control shadow rounded", placeholder: "Write a Comment..." %>
+        </div>
+        <div class="col-auto">
+          <%= f.submit "Post", class: "btn btn-outline-light" %>
+        </div> 
+      </div>
+    <% end %>
+    <%= render 'shared/errors', obj: @comment %>
+  </div>
+</div>

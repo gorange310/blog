@@ -8,16 +8,29 @@
           <%= link_to gravatar_for(@post.user), user_path(@post.user) %>
 
           <% if @post.categories.any? %>
-            <div class="mt-2"><%= render @post.categories %></div>
+          <div class="mt-2"><%= render @post.categories %></div>
           <% end %>
 
         </div>
         <div class="card-body">
           <div class="card-text text-left"><%= simple_format(@post.content) %></div>
-          <% if logged_in? && @post.user == current_user || current_user.admin? %>
-          <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-info" %>
-          <%= link_to "Delete", @post, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
-          <% end %>
+
+          <div class="bg-secondary rounded row justify-content-center">
+            <div class="col-12 m-1 tab-content">
+              <% if @post.comments.any? %>
+                <div class="text-left text-warning"><%= render @post.comments %></div>
+              <% end %>
+            </div>
+            <div>
+              <%= render "comments/comments" %>
+            </div>
+          </div>
+          <div class="m-3">
+            <% if logged_in? && @post.user == current_user || current_user.admin? %>
+              <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-info p-1" %>
+              <%= link_to "Delete", @post, method: :delete, class: "btn btn-outline-danger p-1", data: { confirm: "Are you sure?" } %>
+            <% end %>
+          </div>
         </div>
         <div class="card-footer text-muted">
           <small>

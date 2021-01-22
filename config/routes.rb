@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     collection do
       get :search  # /posts/search
     end
+    resources :comments, shallow: true,
+              except: [:index, :show, :new]
   end
 
   get 'signup', to: 'users#new'
