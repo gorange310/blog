@@ -1,8 +1,17 @@
 <div class="row justify-content-center">
-  <div class="col-12">
-    <div class="tab-pane row">
-      <div class="col-auto"><%= comment.guest.username %>:</div>
-      <div class="col-9"><%= comment.content %></div>
+  <div class="col">
+    <div class="tab-pane row m-1">
+      <div class="col">
+        <%= link_to comment.guest.username, user_path(comment.guest), class: "text-success" %> :
+          <span class="col"><%= comment.content %></span>
+      </div>
+      
+      <div class="col"><small><<%= comment.updated_at.strftime("%I:%M %m/%d/%Y") %>></small></div>
+      <% if logged_in? && @post.user == current_user || current_user.admin? %>
+      <div class="col">
+        <%= button_to "x", comment_path(comment), method: :delete, data: {confirm: 'Are you sure?'}, class:"close" %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

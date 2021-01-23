@@ -1,5 +1,4 @@
-<div class="row justify-content-center">
-  <div class="col-12 m-3">
+<div class="justify-content-center">
     <%= form_with(model: @comment, local: true, url: post_comments_path(@post)) do |f| %>
       <div class="form-group row">
         <div class="col-9">
@@ -11,5 +10,4 @@
       </div>
     <% end %>
     <%= render 'shared/errors', obj: @comment %>
-  </div>
 </div>
