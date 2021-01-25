@@ -21,8 +21,8 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    user_id = current_user.id
-    params.require(:comment).permit(:content, :user_id, :post_id)
+    guest_id = current_user.id
+    params.require(:comment).permit(:content, :guest_id, :post_id)
   end
 
   def require_same_user
