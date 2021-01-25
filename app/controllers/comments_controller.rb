@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     flash[:notice] = "comment was destroyed."
-    redirect_to @commentpost
+    redirect_to @comment.post
   end
 
   private

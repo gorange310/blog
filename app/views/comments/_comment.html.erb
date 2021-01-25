@@ -7,6 +7,12 @@
       </div>
       
       <div class="col"><small><<%= comment.updated_at.strftime("%I:%M %m/%d/%Y") %>></small></div>
+    
+      <div class="col">
+        <% if logged_in? && @post.user == current_user || current_user.admin? %>
+        <%= button_to "x", comment_path(comment), method: :delete, data: {confirm: 'Are you sure?'}, class:"close" %>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
