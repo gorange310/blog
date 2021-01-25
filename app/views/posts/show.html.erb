@@ -16,7 +16,7 @@
           <div class="card-text text-left">
             <%= simple_format(@post.content) %>
           </div>
-
+  
           <div class="bg-secondary rounded row justify-content-center">
             <div class="col-12 m-1">
               <div class= "text-warning">Comments</div>
@@ -27,13 +27,13 @@
                 <% end %>
                 </ul>
               <% end %>
-              <div>
+              <div class="col-10">
                 <%= render "comments/comments" %>
               </div>
             </div>
           </div>
           <div class="m-3">
-            <% if logged_in? && @post.user == current_user || current_user.admin? %>
+            <% if logged_in? && (@post.user == current_user || current_user.admin?) %>
               <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-info p-1" %>
               <%= link_to "Delete", @post, method: :delete, class: "btn btn-outline-danger p-1", data: { confirm: "Are you sure?" } %>
             <% end %>
