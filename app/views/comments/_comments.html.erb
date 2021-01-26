@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col-12">
+  <div class="col-11">
     <%= form_with(model: @comment, local: true, url: post_comments_path(@post)) do |f| %>
       <div class="input-group mb-3">
         <%= f.text_field :content, class: "form-control shadow rounded", placeholder: "Write a Comment..." %>
