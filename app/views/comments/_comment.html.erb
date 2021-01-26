@@ -6,7 +6,7 @@
           <span class="col"><%= comment.content %></span>
       </div>
       
-      <div class="col"><small><<%= comment.updated_at.strftime("%I:%M %m/%d/%Y") %>></small></div>
+      <div class="col"><small><<%= comment.updated_at.strftime("%k:%M %m/%d/%Y") %>></small></div>
     
       <div class="col">
         <% if logged_in? && (comment.post.user == current_user || current_user.admin?) %>
