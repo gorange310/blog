@@ -16,19 +16,18 @@
           <div class="card-text text-left">
             <%= simple_format(@post.content) %>
           </div>
-  
-          <div class="bg-secondary rounded row justify-content-center">
-            <div class="col-12 m-1">
+
+          <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 m-1 bg-secondary rounded">
               <div class= "text-warning">Comments</div>
-              <% if @comments.any? %>
-                <ul>
+              <ul><% if @comments.any? %>
                 <% @comments.each do |comment| %>
                   <div class="text-left text-light"><%= render 'comments/comment', comment: comment %></div>
                 <% end %>
-                </ul>
-              <% end %>
-              <div class="col-10">
-                <%= render "comments/comments" %>
+              <% end %></ul>
+
+              <%= render "comments/comments" %>
               </div>
             </div>
           </div>
