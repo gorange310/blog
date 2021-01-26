@@ -10,7 +10,7 @@
     
       <div class="col">
         <% if logged_in? && (comment.post.user == current_user || current_user.admin?) %>
-        <%= button_to "x", comment_path(comment), method: :delete, data: {confirm: 'Are you sure?'}, class:"close" %>
+        <%= link_to "x", comment_path(comment), method: :delete, data: {confirm: 'Are you sure?'}, class:"close" %>
       <% end %>
       </div>
     </div>
