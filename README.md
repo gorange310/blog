@@ -1,4 +1,4 @@
-# Alpha
+# Alpha Blog
 This is a blog app\
 I'm currently a Ruby/Rails app developer, this is my personal project when I was learn from Udemy Course: the-complete-ruby-on-rails-developer-course.
 
