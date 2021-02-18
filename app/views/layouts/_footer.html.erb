@@ -1,5 +1,8 @@
 <footer id="sticky-footer" class="py-4 bg-dark text-white">
   <div class="container text-center">
-    <small>Copyright &copy; <%= mail_to "gorange@icloud.com", "Gene Li", class: "text-white" %></small>
+    <small>Copyright &copy; <%= mail_to "gorange@icloud.com", "Gene Li ", class: "text-white" %></small>
+    <br>
+    <small><%= link_to "中文", :controller => controller_name, :action => action_name, :locale => "zh-TW" %></small>
+    <small><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></small>
   </div>
 </footer>
