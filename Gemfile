@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'will_paginate', '~> 3.1.0'
 gem "rails-i18n"
+gem 'hirb'  # rails console db table view, in console: $ Hirb.enable
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
