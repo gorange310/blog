@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  post_list: "Post List"
+  user_list: "User List"
+  description_1: "This is a project built with Ruby on Rails"
+  description_2: "It a public Blog for everyone."
+  description_3: "Welcome to Read all the posts or even sign up to join us"

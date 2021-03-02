@@ -1,10 +1,10 @@
 <div class="container" id="home-container">
   <div class="jumbotron text-center text-primary">
     <h1 class="display-4">Orange Blog</h1>
-    <p class="lead">This is a project built with Ruby on Rails</p>
+    <p class="lead"><%= t("description_1") %></p>
     <hr class="my-4">
-    <p>It a public Blog for everyone.</p>
-    <p>Welcome to Read all the posts or even sign up to join us</p>
+    <p><%= t("description_2") %></p>
+    <p><%= t("description_3") %></p>
     <div>
       <%= link_to "Sign up!", signup_path, class: "btn btn-success btn-lg" %>
     </div>
