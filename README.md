@@ -45,7 +45,7 @@ I expanded model: Comment, and RESTful for the routes. Guest can sign up and pos
 
 ## 3 The Production Deployment server: Heroku
 
-  http://orange-finance-tracker.herokuapp.com/
+  http://orange-alpha-blog.herokuapp.com/
   
   
 ## 4 table schema
